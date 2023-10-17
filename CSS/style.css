@@ -1,0 +1,94 @@
+/* Reseteo los estilos por defecto del navegador: */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  /* Creo las variables para el modo oscuro, que sera el modo por defecto: */
+  :root{
+    --color-background-header: #191e2b;
+    --color-background-main: #30343f;
+    --color-background-aside: #252935;
+    --color-background-footer: #30343f;
+    --color-btn-hover: #4e5565; 
+    --color-text: #ffffff;
+    --size-h1: 1.6rem;
+    --size-btn: 0.9rem;
+    --border-btn: 3px;
+  }
+  
+  /* Creo las variables para el modo claro: */
+  [data-theme="light--theme"]{
+    --color-background-header: #e0e0e0;
+    --color-background-main: #eeeeee;
+    --color-background-aside: #fafafa;
+    --color-background-footer: #eeeeee;
+    --color-btn-hover: #bdbdbd; 
+    --color-text: #424242;
+  }
+  
+  /* Inicio el proyecto estilando en mobile first, mq en 320px: */
+  @media (min-width: 320px){
+    .header {
+        background-color: var(--color-background-header);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.5rem 1rem;
+        gap: 1.25rem;
+      }
+    
+      .header--title {
+        font-size: var(--size-h1);
+        text-align: center;
+        color: var(--color-text);
+      }
+      
+      .header--nav {
+        display: flex;
+        justify-content: center;
+        gap: 0.3rem;
+      }
+      
+      .header--nav button {
+        all: unset;
+        color: var(--color-text);
+        font-size: var(--size-btn);
+        padding: 8px 10px;
+        border-radius: var(--border-btn);
+        cursor: pointer;
+      }
+      
+      .header--nav button i {
+        color: var(--color-text);
+        padding-right: 3px;
+        font-size: var(--size-btn);
+      }
+      
+      button:hover {
+        background-color: var(--color-btn-hover);
+      }
+
+      .hidden{
+        display: none;
+      }
+ 
+  }
+
+  /* Agrego una mq en 768px para modificar los tamaños de las fuentes: */
+  @media (min-width: 768px){
+    .header--title {
+        font-size: 2.25rem;
+      }
+
+      .header--nav button {
+        font-size: 1.2rem;
+      }
+      
+      .header--nav button i {
+        font-size: 1.2rem;
+      }
+  }
+  
