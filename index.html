@@ -38,6 +38,141 @@
       </button>
     </main>
 
+    <!-- Comienza el primer aside, para editar propiedades de imagen -->
+
+    <aside class="section--panels hidden">
+      <section class="section--img">
+        <button class="close--btn"><i class="fa-solid fa-xmark"></i></button>
+        <h2>IMAGEN</h2>
+        <div>
+          <h3>URL</h3>
+          <input type="url" id="url--img" />
+        </div>
+        <div>
+          <h3>FONDO</h3>
+          <div class="color--background">
+            <div class="background">
+              <input type="color" id="color--meme" value="#ffffff" />
+              <span>#ffffff</span>
+            </div>
+            <div class="panel--background">
+              <select id="mode--options" class="mode--input">
+                <option value="unset">Ninguno</option>
+                <option value="lighten">Aclarar</option>
+                <option value="darken">Oscurecer</option>
+                <option value="difference">Diferencia</option>
+                <option value="luminosity">Luminosidad</option>
+                <option value="multiply">Multiplicar</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>FILTROS</h3>
+          <div class="editor filters--brightness">
+            <label for="filters--brightness">BRILLO</label>
+            <input
+              type="range"
+              id="filters--brightness"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
+          <div class="editor filters--opacity">
+            <label for="filters--opacity">OPACIDAD</label>
+            <input
+              type="range"
+              id="filters--opacity"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
+          <div class="editor filters--contrast">
+            <label for="filters--contrast">CONTRASTE</label>
+            <input
+              type="range"
+              id="filters--contrast"
+              min="100"
+              max="1000"
+              step="1"
+              value="100"
+            />
+          </div>
+          <div class="editor filters--blur">
+            <label for="filters--blur">DESENFOQUE</label>
+            <input
+              type="range"
+              id="filters--blur"
+              min="0"
+              max="10"
+              step="0.1"
+              value="0"
+            />
+          </div>
+          <div class="editor filters--grayscale">
+            <label for="filters--grayscale">ESCALA DE GRISES</label>
+            <input
+              type="range"
+              id="filters--grayscale"
+              min="0"
+              max="100"
+              step="1"
+              value="0"
+            />
+          </div>
+          <div class="editor filters--sepia">
+            <label for="filters--sepia">SEPIA</label>
+            <input
+              type="range"
+              id="filters--sepia"
+              min="0"
+              max="100"
+              step="1"
+              value="0"
+            />
+          </div>
+          <div class="editor filters--hue">
+            <label for="filters--hue">HUE</label>
+            <input
+              type="range"
+              id="filters--hue"
+              min="0"
+              max="359"
+              step="1"
+              value="0"
+            />
+          </div>
+          <div class="editor filters--saturate">
+            <label for="filters--saturate">SATURADO</label>
+            <input
+              type="range"
+              id="filters--saturate"
+              min="100"
+              max="1000"
+              step="10"
+              value="100"
+            />
+          </div>
+          <div class="editor filters--invert">
+            <label for="filters--invert">NEGATIVO</label>
+            <input
+              type="range"
+              id="filters--invert"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+          </div>
+        </div>
+        <button class="reset--btn" id="reset--btn">Reestablecer filtros</button>
+      </section>
+    </aside>
+
     <script src="JS/main.js"></script>
   </body>
 </html>

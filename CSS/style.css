@@ -12,8 +12,9 @@
   --color-background-main: #30343f;
   --color-background-aside: #252935;
   --color-background-footer: #30343f;
+  --color-background-btn: #393e49;
   --color-btn-hover: #4e5565;
-  --color-text: #ffffff;
+  --color-text: #f1f1f1;
   --size-h1: 1.6rem;
   --size-btn: 0.9rem;
   --border-btn: 3px;
@@ -39,6 +40,8 @@ body {
 
 /* Inicio el proyecto estilando en mobile first, mq en 320px: */
 @media (min-width: 320px) {
+
+  /* Comienzo a estilar el header */
   .header {
     width: 100%;
     background-color: var(--color-background-header);
@@ -61,7 +64,8 @@ body {
     gap: 0.3rem;
   }
 
-  .header--nav button, .download--btn {
+  .header--nav button,
+  .download--btn {
     all: unset;
     color: var(--color-text);
     font-size: var(--size-btn);
@@ -84,6 +88,8 @@ body {
     display: none;
   }
 
+    /* Comienzo a estilar el main */
+
   .meme--container {
     width: 300px;
     height: 90vh;
@@ -104,7 +110,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-}
+  }
 
   .text {
     width: 100%;
@@ -113,7 +119,7 @@ body {
     text-align: center;
     padding: 0.3rem 0.5rem;
     font-size: 1rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     font-weight: 800;
   }
 
@@ -128,19 +134,159 @@ body {
   .download--btn {
     background-color: #2e7d32;
   }
-  
+
   .download--btn:hover {
     background-color: #27582a;
   }
-  
+
   .download--btn i {
     font-size: 16px;
     padding: 6px;
   }
+
+    /* Comienzo a estilar el aside */
+
+  .section--panels {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Del aside, comienzo a estilar la seccion de la img*/
+
+  .section--img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.3rem;
+    color: var(--color-text);
+    background-color: var(--color-background-aside);
+  }
+
+  .close--btn {
+    all: unset;
+    color: var(--color-text);
+    width: 10%;
+    align-self: flex-end;
+  }
+
+  .close--btn i {
+    font-size: 1.1rem;
+    font-weight: bolder;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  h3,
+  label {
+    font-size: 0.75rem;
+    margin: 0.5rem 0rem;
+  }
+
+  #url--img {
+    all: unset;
+    width: 100%;
+    height: 2.3rem;
+    background-color: var(--color-background-btn);
+    border-radius: var(--border-btn);
+  }
+
+  .color--background {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .background {
+    width: 7rem;
+    height: 2.5em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    border-radius: var(--border-btn);
+    color: var(--color-text);
+    background-color: var(--color-background-btn);
+    padding: 0.5rem 0.9rem;
+  }
+
+  span{
+    padding: 0.4rem 0rem;
+  }
+
+  .mode--input {
+    width: 7rem;
+    height: 2.5rem;
+    -moz-appearance: none;
+    background-color: var(--color-background-btn);
+    border: none;
+    border-radius: var(--border-btn);
+    color: var(--color-text);
+    padding: 0.5rem 0.9rem;
+  }
+
+
+  /* Para que el input quede en forma circular busque
+  varias alternativas pero no me dieron resultado. 
+  Luego,en stackoverflow encontre esta solucion: */
+
+  input[type="color"] {
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+
+  input[type="color"]::-webkit-color-swatch,
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    background-color: #5a5d68;
+    border-radius: 0.8rem;
+    appearance: none;
+    height: 0.4rem;
+    margin: 0.3rem 0rem;
+  }
+
+  .editor {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Para este input tambien investigue y encontre 
+    el codigo en  internet*/
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--color-text);
+    cursor: pointer;
+  }
+
+  .reset--btn {
+    all: unset;
+    width: 9rem;
+    height: 1.8rem;
+    font-size: 1rem;
+    background-color: var(--color-background-btn);
+    border-radius: var(--border-btn);
+    padding: 0.2rem 1rem;
+  }
 }
 
 /* Agrego una mq en 375px para modificar el tamaño del contenedor del meme: */
-@media (min-width: 375px){
+@media (min-width: 375px) {
   .meme--container {
     width: 320px;
   }
@@ -194,4 +340,3 @@ body {
     font-size: 2.5rem;
   }
 }
-
