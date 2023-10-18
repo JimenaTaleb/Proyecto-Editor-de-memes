@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/48ddeb67c9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/48ddeb67c9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="CSS/style.css" />
     <title>Editor de memes by Ji</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Comienzo con el header -->
-  <header class="header" id="header">
-    <h1 class="header--title">Generador de Memes</h1>
-    <nav class="header--nav">
-      <button class="image--btn">
-        <i class="fa-regular fa-image"></i>Imagen
-      </button>
-      <button class="text--btn">
-        <i class="fa-solid fa-font"></i>Texto
-      </button>
-      <button class="change-theme--btn">
-        <i class="fa-regular fa-lightbulb" id="lightbulb--off"></i>Modo oscuro
-        <i class="fa-regular fa-lightbulb hidden" id="lightbulb--on"></i>
-      </button>
-    </nav>
-  </header>
+    <header class="header" id="header">
+      <h1 class="header--title">Generador de Memes</h1>
+      <nav class="header--nav">
+        <button class="image--btn">
+          <i class="fa-regular fa-image"></i>Imagen
+        </button>
+        <button class="text--btn"><i class="fa-solid fa-font"></i>Texto</button>
+        <button class="change-theme--btn">
+          <i class="fa-regular fa-lightbulb" id="lightbulb--off"></i>Modo oscuro
+          <i class="fa-regular fa-lightbulb hidden" id="lightbulb--on"></i>
+        </button>
+      </nav>
+    </header>
 
-
+    <!-- Termina el header y comienza el main, que contiene la visualizacion del meme -->
+    <main class="meme--container">
+      <div class="meme--editor">
+        <p class="text top--text">TOP TEXT</p>
+        <div class="meme--img"></div>
+        <p class="text bottom--text">BOTTOM TEXT</p>
+      </div>
+      <button class="download--btn">
+        <i class="fa-solid fa-cloud-arrow-down"></i>Descargar meme
+      </button>
+    </main>
 
     <script src="JS/main.js"></script>
-    
-</body>
+  </body>
 </html>

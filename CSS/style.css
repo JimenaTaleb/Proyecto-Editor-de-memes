@@ -1,94 +1,197 @@
 /* Reseteo los estilos por defecto del navegador: */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
-  }
-  
-  /* Creo las variables para el modo oscuro, que sera el modo por defecto: */
-  :root{
-    --color-background-header: #191e2b;
-    --color-background-main: #30343f;
-    --color-background-aside: #252935;
-    --color-background-footer: #30343f;
-    --color-btn-hover: #4e5565; 
-    --color-text: #ffffff;
-    --size-h1: 1.6rem;
-    --size-btn: 0.9rem;
-    --border-btn: 3px;
-  }
-  
-  /* Creo las variables para el modo claro: */
-  [data-theme="light--theme"]{
-    --color-background-header: #e0e0e0;
-    --color-background-main: #eeeeee;
-    --color-background-aside: #fafafa;
-    --color-background-footer: #eeeeee;
-    --color-btn-hover: #bdbdbd; 
-    --color-text: #424242;
-  }
-  
-  /* Inicio el proyecto estilando en mobile first, mq en 320px: */
-  @media (min-width: 320px){
-    .header {
-        background-color: var(--color-background-header);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 1.5rem 1rem;
-        gap: 1.25rem;
-      }
-    
-      .header--title {
-        font-size: var(--size-h1);
-        text-align: center;
-        color: var(--color-text);
-      }
-      
-      .header--nav {
-        display: flex;
-        justify-content: center;
-        gap: 0.3rem;
-      }
-      
-      .header--nav button {
-        all: unset;
-        color: var(--color-text);
-        font-size: var(--size-btn);
-        padding: 8px 10px;
-        border-radius: var(--border-btn);
-        cursor: pointer;
-      }
-      
-      .header--nav button i {
-        color: var(--color-text);
-        padding-right: 3px;
-        font-size: var(--size-btn);
-      }
-      
-      button:hover {
-        background-color: var(--color-btn-hover);
-      }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
 
-      .hidden{
-        display: none;
-      }
- 
+/* Creo las variables para el modo oscuro, que sera el modo por defecto: */
+:root {
+  --color-background-header: #191e2b;
+  --color-background-main: #30343f;
+  --color-background-aside: #252935;
+  --color-background-footer: #30343f;
+  --color-btn-hover: #4e5565;
+  --color-text: #ffffff;
+  --size-h1: 1.6rem;
+  --size-btn: 0.9rem;
+  --border-btn: 3px;
+}
+
+/* Creo las variables para el modo claro: */
+[data-theme="light--theme"] {
+  --color-background-header: #e0e0e0;
+  --color-background-main: #eeeeee;
+  --color-background-aside: #fafafa;
+  --color-background-footer: #eeeeee;
+  --color-btn-hover: #bdbdbd;
+  --color-text: #424242;
+}
+
+body {
+  background-color: var(--color-background-main);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Inicio el proyecto estilando en mobile first, mq en 320px: */
+@media (min-width: 320px) {
+  .header {
+    width: 100%;
+    background-color: var(--color-background-header);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+    gap: 1.25rem;
   }
 
-  /* Agrego una mq en 768px para modificar los tamaños de las fuentes: */
-  @media (min-width: 768px){
-    .header--title {
-        font-size: 2.25rem;
-      }
+  .header--title {
+    font-size: var(--size-h1);
+    text-align: center;
+    color: var(--color-text);
+  }
 
-      .header--nav button {
-        font-size: 1.2rem;
-      }
-      
-      .header--nav button i {
-        font-size: 1.2rem;
-      }
+  .header--nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .header--nav button, .download--btn {
+    all: unset;
+    color: var(--color-text);
+    font-size: var(--size-btn);
+    padding: 8px 10px;
+    border-radius: var(--border-btn);
+    cursor: pointer;
+  }
+
+  .header--nav button i {
+    color: var(--color-text);
+    padding-right: 3px;
+    font-size: var(--size-btn);
+  }
+
+  button:hover {
+    background-color: var(--color-btn-hover);
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .meme--container {
+    width: 300px;
+    height: 90vh;
+    background-color: var(--color-background-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .meme--editor {
+    position: relative;
+    background-color: black;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  .text {
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 800;
+  }
+
+  .meme--img {
+    width: 100%;
+    height: 220px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .download--btn {
+    background-color: #2e7d32;
   }
   
+  .download--btn:hover {
+    background-color: #27582a;
+  }
+  
+  .download--btn i {
+    font-size: 16px;
+    padding: 6px;
+  }
+}
+
+/* Agrego una mq en 375px para modificar el tamaño del contenedor del meme: */
+@media (min-width: 375px){
+  .meme--container {
+    width: 320px;
+  }
+
+  .meme--img {
+    height: 260px;
+  }
+}
+
+/* Agrego la siguiente mq en 425px para modificar el tamaño del contenedor del meme: */
+@media (min-width: 425px) {
+  .meme--container {
+    width: 380px;
+  }
+
+  .meme--img {
+    height: 300px;
+  }
+
+  .text {
+    padding: 0.5rem 0.7rem;
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+}
+
+/* Agrego otra mq en 768px para modificar los tamaños de las fuentes y el contenedor del meme: */
+@media (min-width: 768px) {
+  .header--title {
+    font-size: 2.25rem;
+  }
+
+  .meme--container {
+    width: 600px;
+  }
+
+  .meme--img {
+    height: 406px;
+  }
+
+  .text {
+    padding: 0.8rem 0.7rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* Agrego la ultima mq en 1024px para modificar los tamaños de las fuentes del texto: */
+@media (min-width: 1024px) {
+  .text {
+    padding: 1.1rem 1rem;
+    font-size: 2.5rem;
+  }
+}
+
