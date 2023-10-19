@@ -11,7 +11,7 @@
     <title>Editor de memes by Ji</title>
   </head>
   <body>
-    <!-- Comienzo con el header -->
+    <!-- Comienza con el header -->
     <header class="header" id="header">
       <h1 class="header--title">Generador de Memes</h1>
       <nav class="header--nav">
@@ -38,9 +38,13 @@
       </button>
     </main>
 
-    <!-- Comienza el primer aside, para editar propiedades de imagen -->
+    <!-- Comienza el aside, que contendra dos section, una para
+      editar propiedades de imagen y otra las propiedades de texto.
+     -->
 
-    <aside class="section--panels">
+    <aside class="section--panels hidden">
+<!-- Comienza el section de IMG-->
+      
       <section class="section--img">
         <button class="close--btn"><i class="fa-solid fa-xmark"></i></button>
         <h2>IMAGEN</h2>
@@ -171,6 +175,8 @@
         </div>
         <button class="reset--btn" id="reset--btn">Reestablecer filtros</button>
       </section>
+
+      <!-- Comienza el section de TEXTO-->
 
       <section class="section--txt">
         <button class="close--btn"><i class="fa-solid fa-x"></i></button>
