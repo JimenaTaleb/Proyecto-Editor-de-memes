@@ -40,7 +40,7 @@
 
     <!-- Comienza el primer aside, para editar propiedades de imagen -->
 
-    <aside class="section--panels hidden">
+    <aside class="section--panels">
       <section class="section--img">
         <button class="close--btn"><i class="fa-solid fa-xmark"></i></button>
         <h2>IMAGEN</h2>
@@ -171,6 +171,112 @@
         </div>
         <button class="reset--btn" id="reset--btn">Reestablecer filtros</button>
       </section>
+
+      <section class="section--txt">
+        <button class="close--btn"><i class="fa-solid fa-x"></i></button>
+        <h2>TEXTO</h2>
+
+        <div class="text--editor">
+            <div class="text--top">
+                <h3>SUPERIOR</h3>
+                <textarea name="top--text" id="top--text" rows="1">TOP TEXT</textarea>
+                <label>
+                    <input type="checkbox" name="no--top-text" id="top--text-checkbox">
+                    Sin texto superior
+                </label>
+
+            </div>
+            <div class="text--bottom">
+                <h3>INFERIOR</h3>
+                <textarea name="bottom--text" id="bottom--text" rows="1">BOTTOM TEXT</textarea>
+                <label>
+                    <input type="checkbox" name="no--bottom-text" id="bottom--text-checkbox">
+                    Sin texto inferior
+                </label>
+            </div>
+        </div>
+
+        <div class="family--font">
+            <h3>FUENTE</h3>
+            <div>
+                <label>
+                    <select name="font-family" id="font-select">
+                        <option value="'Franklin Gothic Medium'">Franklin Gothic Medium</option>
+                        <option value="monospace">Andale Mono</option>
+                        <option value="'Lucida Sans Unicode'">Lucida Sans Unicode</option>
+                        <option value="'Trebuchet MS'">Trebuchet MS</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact" selected>Impact</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="number" value="16" min="12" class="font--size" id="font--size">
+                </label>
+                <i class="txt--align fa-solid fa-align-left"></i>
+                <i class="txt--align fa-solid fa-align-center"></i>
+                <i class="txt--align fa-solid fa-align-right"></i>
+            </div>
+        </div>
+
+        <div class="color">
+            <div class="color--panel">
+                <div>
+                    <h3>COLOR</h3>
+                    <label class="label">
+                        <input type="color" id="font--color" value="#000000"> 
+                        <span>#000000</span>
+                    </label>
+                </div>
+
+                <div>
+                    <h3>FONDO</h3>
+                    <label class="label">
+                        <input type="color" id="background--color" value="#FFFFFF"> 
+                        <span>#FFFFFF</span>
+                    </label>
+                </div>
+            </div>
+            <label>
+                <input type="checkbox" name="background--checkbox" id="transparent--checkbox">
+                Fondo transparente
+            </label>
+        </div>
+
+        <div class="outline">
+            <h3>CONTORNO</h3>
+            <div>
+                <button type="button" class="btn--outline" id="btn--none">Ninguno</button>
+                <button type="button" class="btn--outline" id="btn--light">Claro</button>
+                <button type="button" class="btn--outline" id="btn--dark">Oscuro</button>
+            </div>
+        </div>
+
+        <div class="spacing">
+            <h3>ESPACIADO</h3>
+            <label>
+                <input type="number" min="10" max="50" value="35" class="number--spacing" id="input--spacing">
+            </label>
+        </div>
+
+        <div class="line--spacing">
+            <h3>INTERLINEADO</h3>
+            <label>
+                <select name="line--height-select" id="line--height-select">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected>1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </label>
+        </div>
+    </section>
     </aside>
 
     <script src="JS/main.js"></script>
