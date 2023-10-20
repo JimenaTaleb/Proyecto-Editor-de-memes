@@ -26,11 +26,11 @@
     <header class="header" id="header">
       <h1 class="header--title">Generador de Memes</h1>
       <nav class="header--nav">
-        <button class="image--btn">
+        <button class="image--btn" id="btnImg">
           <i class="fa-regular fa-image"></i>Imagen
         </button>
-        <button class="text--btn"><i class="fa-solid fa-font"></i>Texto</button>
-        <button class="change-theme--btn">
+        <button class="text--btn" id="btnTxt"><i class="fa-solid fa-font"></i>Texto</button>
+        <button class="change-theme--btn" id="btnTheme">
           <i class="fa-regular fa-lightbulb" id="lightbulb--off"></i>Modo oscuro
           <i class="fa-regular fa-lightbulb hidden" id="lightbulb--on"></i>
         </button>
@@ -40,11 +40,11 @@
     <!-- Termina el header y comienza el main, que contiene la visualizacion del meme -->
     <main class="meme--container">
       <div class="meme--editor">
-        <p class="text top--text">TOP TEXT</p>
-        <div class="meme--img"></div>
-        <p class="text bottom--text">BOTTOM TEXT</p>
+        <p class="text top--text" id="topText">TOP TEXT</p>
+        <div class="meme--img" id="memeImg"></div>
+        <p class="text bottom--text" id="bottomText">BOTTOM TEXT</p>
       </div>
-      <button class="download--btn">
+      <button class="download--btn" id="btnDownload">
         <i class="fa-solid fa-cloud-arrow-down"></i>Descargar meme
       </button>
     </main>
@@ -53,25 +53,25 @@
       editar propiedades de imagen y otra las propiedades de texto.
      -->
 
-    <aside class="section--panels hidden">
+    <aside class="section--panels hidden" id="bothSections">
 <!-- Comienza el section de IMG-->
       
-      <section class="section--img">
-        <button class="close--btn"><i class="fa-solid fa-xmark"></i></button>
+      <section class="section--img" id="imgSection">
+        <button class="close--btn" id="btnCloseSection"><i class="fa-solid fa-xmark"></i></button>
         <h2>IMAGEN</h2>
         <div>
           <h3>URL</h3>
-          <input type="url" id="url--img" />
+          <input type="url" id="urlImg" />
         </div>
         <div>
           <h3>FONDO</h3>
           <div class="color--background">
             <div class="background">
-              <input type="color" id="color--meme" value="#ffffff" />
+              <input type="color" id="colorBackgroundImg" value="#ffffff" />
               <span>#ffffff</span>
             </div>
             <div class="panel--background">
-              <select id="mode--options" class="mode--input">
+              <select id="modeOptions" class="mode--input">
                 <option value="unset">Ninguno</option>
                 <option value="lighten">Aclarar</option>
                 <option value="darken">Oscurecer</option>
@@ -88,7 +88,7 @@
             <label for="filters--brightness">BRILLO</label>
             <input
               type="range"
-              id="filters--brightness"
+              id="brightness"
               min="0"
               max="1"
               step="0.1"
@@ -99,7 +99,7 @@
             <label for="filters--opacity">OPACIDAD</label>
             <input
               type="range"
-              id="filters--opacity"
+              id="opacity"
               min="0"
               max="1"
               step="0.1"
@@ -110,7 +110,7 @@
             <label for="filters--contrast">CONTRASTE</label>
             <input
               type="range"
-              id="filters--contrast"
+              id="contrast"
               min="100"
               max="1000"
               step="1"
@@ -121,7 +121,7 @@
             <label for="filters--blur">DESENFOQUE</label>
             <input
               type="range"
-              id="filters--blur"
+              id="blur"
               min="0"
               max="10"
               step="0.1"
@@ -132,7 +132,7 @@
             <label for="filters--grayscale">ESCALA DE GRISES</label>
             <input
               type="range"
-              id="filters--grayscale"
+              id="grayscale"
               min="0"
               max="100"
               step="1"
@@ -143,7 +143,7 @@
             <label for="filters--sepia">SEPIA</label>
             <input
               type="range"
-              id="filters--sepia"
+              id="sepia"
               min="0"
               max="100"
               step="1"
@@ -154,7 +154,7 @@
             <label for="filters--hue">HUE</label>
             <input
               type="range"
-              id="filters--hue"
+              id="hue"
               min="0"
               max="359"
               step="1"
@@ -165,7 +165,7 @@
             <label for="filters--saturate">SATURADO</label>
             <input
               type="range"
-              id="filters--saturate"
+              id="saturate"
               min="100"
               max="1000"
               step="10"
@@ -176,7 +176,7 @@
             <label for="filters--invert">NEGATIVO</label>
             <input
               type="range"
-              id="filters--invert"
+              id="invert"
               min="0"
               max="1"
               step="0.1"
@@ -184,30 +184,30 @@
             />
           </div>
         </div>
-        <button class="reset--btn" id="reset--btn">Reestablecer filtros</button>
+        <button class="reset--btn" id="btnResetFilters">Reestablecer filtros</button>
       </section>
 
       <!-- Comienza el section de TEXTO-->
 
-      <section class="section--txt">
-        <button class="close--btn"><i class="fa-solid fa-x"></i></button>
+      <section class="section--txt" id="txtSection">
+        <button class="close--btn" id="btnCloseSection"><i class="fa-solid fa-x"></i></button>
         <h2>TEXTO</h2>
 
         <div class="text--editor">
             <div class="text--top">
                 <h3>SUPERIOR</h3>
-                <textarea name="top--text" id="top--text" rows="1">TOP TEXT</textarea>
+                <textarea name="top--text" id="topText" rows="1">TOP TEXT</textarea>
                 <label>
-                    <input type="checkbox" name="no--top-text" id="top--text-checkbox">
+                    <input type="checkbox" name="no--top-text" id="withoutText">
                     Sin texto superior
                 </label>
 
             </div>
             <div class="text--bottom">
                 <h3>INFERIOR</h3>
-                <textarea name="bottom--text" id="bottom--text" rows="1">BOTTOM TEXT</textarea>
+                <textarea name="bottom--text" id="bottomText" rows="1">BOTTOM TEXT</textarea>
                 <label>
-                    <input type="checkbox" name="no--bottom-text" id="bottom--text-checkbox">
+                    <input type="checkbox" name="no--bottom-text" id="withoutText">
                     Sin texto inferior
                 </label>
             </div>
@@ -217,7 +217,7 @@
             <h3>FUENTE</h3>
             <div>
                 <label>
-                    <select name="font-family" id="font-select">
+                    <select name="font--family" id="fontFamilySelect">
                         <option value="'Franklin Gothic Medium'">Franklin Gothic Medium</option>
                         <option value="monospace">Andale Mono</option>
                         <option value="'Lucida Sans Unicode'">Lucida Sans Unicode</option>
@@ -232,7 +232,7 @@
             </div>
             <div>
                 <label>
-                    <input type="number" value="16" min="12" class="font--size" id="font--size">
+                    <input type="number" value="16" min="12" class="font--size" id="fontSize">
                 </label>
                 <i class="txt--align fa-solid fa-align-left"></i>
                 <i class="txt--align fa-solid fa-align-center"></i>
@@ -245,7 +245,7 @@
                 <div>
                     <h3>COLOR</h3>
                     <label class="label">
-                        <input type="color" id="font--color" value="#000000"> 
+                        <input type="color" id="fontColor" value="#000000"> 
                         <span>#000000</span>
                     </label>
                 </div>
@@ -253,13 +253,13 @@
                 <div>
                     <h3>FONDO</h3>
                     <label class="label">
-                        <input type="color" id="background--color" value="#FFFFFF"> 
+                        <input type="color" id="fontBackgroundColor" value="#FFFFFF"> 
                         <span>#FFFFFF</span>
                     </label>
                 </div>
             </div>
             <label>
-                <input type="checkbox" name="background--checkbox" id="transparent--checkbox">
+                <input type="checkbox" name="background--checkbox" id="transparentBackground">
                 Fondo transparente
             </label>
         </div>
@@ -267,23 +267,23 @@
         <div class="outline">
             <h3>CONTORNO</h3>
             <div>
-                <button type="button" class="btn--outline" id="btn--none">Ninguno</button>
-                <button type="button" class="btn--outline" id="btn--light">Claro</button>
-                <button type="button" class="btn--outline" id="btn--dark">Oscuro</button>
+                <button type="button" class="btn--outline" id="btnNoneShadow">Ninguno</button>
+                <button type="button" class="btn--outline" id="btnLightShadow">Claro</button>
+                <button type="button" class="btn--outline" id="btnDarkShadow">Oscuro</button>
             </div>
         </div>
 
         <div class="spacing">
             <h3>ESPACIADO</h3>
             <label>
-                <input type="number" min="10" max="50" value="35" class="number--spacing" id="input--spacing">
+                <input type="number" min="10" max="50" value="35" class="number--spacing" id="inputSpacing">
             </label>
         </div>
 
         <div class="line--spacing">
             <h3>INTERLINEADO</h3>
             <label>
-                <select name="line--height-select" id="line--height-select">
+                <select name="line--height-select" id="lineHeightSelect">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
                     <option value="1.2" selected>1.2</option>

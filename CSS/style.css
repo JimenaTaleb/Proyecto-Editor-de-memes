@@ -40,7 +40,6 @@ body {
 
 /* Inicio el proyecto estilando en mobile first, mq en 320px: */
 @media (min-width: 320px) {
-
   /* Comienzo a estilar el header */
   .header {
     width: 100%;
@@ -88,7 +87,7 @@ body {
     display: none;
   }
 
-    /* Comienzo a estilar el main */
+  /* Comienzo a estilar el main */
 
   .meme--container {
     width: 300px;
@@ -144,16 +143,21 @@ body {
     padding: 6px;
   }
 
-    /* Comienzo a estilar el aside */
+  /* Comienzo a estilar el aside */
 
   .section--panels {
     width: 100%;
     height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
   }
 
   /* Del aside, comienzo a estilar la seccion de la img*/
 
-  .section--img, .section--txt {
+  .section--img,
+  .section--txt {
     display: block;
     width: 100%;
     height: 100%;
@@ -188,7 +192,9 @@ body {
     margin: 0.5rem 0rem;
   }
 
-  #url--img, .number--spacing, textarea {
+  #url--img,
+  .number--spacing,
+  textarea {
     all: unset;
     width: 100%;
     height: 2.3rem;
@@ -196,12 +202,11 @@ body {
     border-radius: var(--border-btn);
   }
 
-  textarea{
+  textarea {
     font-size: 0.8rem;
     padding-top: 0.5rem;
   }
 
-  
   .color--background {
     display: flex;
     flex-direction: row;
@@ -220,11 +225,13 @@ body {
     padding: 0.5rem 0.9rem;
   }
 
-  span{
+  span {
     padding: 0.4rem 0rem;
   }
 
-  .mode--input, #line--height-select, #font-select {
+  .mode--input,
+  #line--height-select,
+  #font-select {
     width: 7rem;
     height: 2.5rem;
     -moz-appearance: none;
@@ -235,12 +242,11 @@ body {
     padding: 0.5rem 0.9rem;
   }
 
-
-  #font-select{
+  #font-select {
     width: 100%;
   }
 
-  .font--size{
+  .font--size {
     width: 42%;
     -moz-appearance: none;
     background-color: var(--color-background-btn);
@@ -250,7 +256,7 @@ body {
     padding: 0.5rem 2rem;
   }
 
-  .txt--align{
+  .txt--align {
     font-size: 1rem;
     padding: 0.5rem 1rem;
     margin: 0.5rem 0.1rem;
@@ -259,9 +265,6 @@ body {
     border-radius: var(--border-btn);
     color: var(--color-text);
   }
-
-
-
 
   /* Para que el input quede en forma circular busque
   varias alternativas pero no me dieron resultado. 
@@ -317,25 +320,26 @@ body {
     padding: 0.2rem 1rem;
   }
 
-   /* Del aside, comienzo a estilar la seccion del txt*/
+  /* Del aside, comienzo a estilar la seccion del txt*/
 
-   #line--height-select{
+  #line--height-select {
     width: 100%;
-   }
+  }
 
-   .text--top, .text--bottom{
+  .text--top,
+  .text--bottom {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-   }
+  }
 
-   .color--panel{
+  .color--panel {
     display: flex;
     flex-direction: row;
     gap: 0.5rem;
-   }
+  }
 
-   .label{
+  .label {
     width: 8rem;
     height: 2.2rem;
     float: left;
@@ -347,9 +351,9 @@ body {
     font-size: 0.8rem;
     font-weight: bolder;
     text-align: center;
-   }
+  }
 
-   .outline button{
+  .outline button {
     all: unset;
     width: 25%;
     height: 2.3rem;
@@ -357,9 +361,7 @@ body {
     border-radius: var(--border-btn);
     text-align: center;
     font-size: 0.8rem;
-   }
-
-
+  }
 }
 
 /* Agrego una mq en 375px para modificar el tamaño del contenedor del meme: */
