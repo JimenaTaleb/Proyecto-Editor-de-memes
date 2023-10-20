@@ -170,11 +170,11 @@ body {
     background-color: var(--color-background-aside);
   }
 
-  .close--btn {
+  #btnCloseSectionImg, #btnCloseSectionTxt{
     all: unset;
-    color: var(--color-text);
-    width: 10%;
-    align-self: flex-end;
+    position: relative;
+    top: 5px;
+    left: 250px;
   }
 
   .close--btn i {

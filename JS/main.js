@@ -22,7 +22,13 @@ $("#btnTxt").addEventListener("click", () =>{
     $("#txtSection").style.display = "block"
 })
 
+$("#btnCloseSectionImg").addEventListener("click", () => {
+    $("#bothSections").classList.add("hidden");
+  });
 
+  $("#btnCloseSectionTxt").addEventListener("click", () => {
+    $("#bothSections").classList.add("hidden");
+  });
 
 
 
