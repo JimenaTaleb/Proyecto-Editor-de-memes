@@ -12,15 +12,18 @@ const $ = (selector) => document.querySelector(selector)
 
 
 $("#btnImg").addEventListener("click", () =>{
-    $("#bothSections").classList.toggle("hidden")
-    $("#imgSection").classList.toggle("hidden")
+    $("#bothSections").classList.remove("hidden")
+    $("#txtSection").style.display = "none"
 })
 
 $("#btnTxt").addEventListener("click", () =>{
-    $("#bothSections").classList.toggle("hidden")
-    $("#imgSection").classList.add("hidden")
-    $("#txtSection").classList.toggle("hidden")
+    $("#bothSections").classList.remove("hidden")
+    $("#imgSection").style.display = "none"
+    $("#txtSection").style.display = "block"
 })
+
+
+
 
 
 
