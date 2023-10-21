@@ -230,7 +230,15 @@ $("#inputSpacing").addEventListener("input", (e) => {
 })
 
 
+//INTERLINEADO
 
+$("#lineHeightSelect").addEventListener("input", (e) => {
+  $("#topText").style.lineHeight = e.target.value
+})
+
+$("#lineHeightSelect").addEventListener("input", (e) => {
+  $("#bottomText").style.lineHeight = e.target.value
+})
 
 
 
