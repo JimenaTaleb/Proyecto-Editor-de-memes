@@ -11,7 +11,6 @@
   --color-background-header: #191e2b;
   --color-background-main: #30343f;
   --color-background-aside: #252935;
-  --color-background-footer: #30343f;
   --color-background-btn: #393e49;
   --color-btn-hover: #4e5565;
   --color-text: #f1f1f1;
@@ -25,9 +24,12 @@
   --color-background-header: #e0e0e0;
   --color-background-main: #eeeeee;
   --color-background-aside: #fafafa;
-  --color-background-footer: #eeeeee;
+  --color-background-btn: #e0e0e0;
   --color-btn-hover: #bdbdbd;
   --color-text: #424242;
+  --size-h1: 1.6rem;
+  --size-btn: 0.9rem;
+  --border-btn: 3px;
 }
 
 body {
@@ -79,6 +81,12 @@ body {
     padding-right: 3px;
     font-size: var(--size-btn);
   }
+
+  /* #lightbulb--off, #lightbulb--on{
+    color: var(--color-text);
+    padding-right: 3px;
+    font-size: var(--size-btn);
+  } */
 
   button:hover {
     background-color: var(--color-btn-hover);
@@ -134,6 +142,7 @@ body {
 
   .download--btn {
     background-color: #2e7d32;
+    color: #fafafa;
   }
 
   .download--btn:hover {

@@ -30,6 +30,18 @@ $("#btnCloseSectionTxt").addEventListener("click", () => {
     $("#txtSection").classList.add("hidden");
   });
 
+//MODO CLARO OSCURO BOTON
+$("#btnTheme").addEventListener("click", () => {
+  const currentTheme = $("body").getAttribute("data-theme")
+  if (currentTheme) {
+      $("body").removeAttribute("data-theme", "light--theme")
+  } else {
+      $("body").setAttribute("data-theme", "light--theme")
+  }
+  $("#lightbulb--off").classList.toggle("hidden")
+  $("#lightbulb--on").classList.toggle("hidden")
+});  
+
 //URL IMG
 $("#urlImg").addEventListener("input", (e) =>{
   $("#memeImg").style.backgroundImage = `url(${e.target.value})`
