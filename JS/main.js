@@ -35,6 +35,12 @@ $("#urlImg").addEventListener("input", (e) =>{
   $("#memeImg").style.backgroundImage = `url(${e.target.value})`
 });   
 
+//FONDO
+$("#colorBackgroundImg").addEventListener("input", (e) =>{
+  $("#memeImg").style.backgroundColor = e.target.value
+  $("#colorBackgroundImgText").innerText = e.target.value
+});
+
 
 
 
