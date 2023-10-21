@@ -219,6 +219,15 @@ $("#transparentBackground").addEventListener("input", (e) => {
 }
 })
 
+//ESPACIADO
+
+$("#inputSpacing").addEventListener("input", (e) => {
+  $("#topText").style.padding = `${e.target.value}px 30px`
+})
+
+$("#inputSpacing").addEventListener("input", (e) => {
+  $("#bottomText").style.padding = `${e.target.value}px 30px`
+})
 
 
 
