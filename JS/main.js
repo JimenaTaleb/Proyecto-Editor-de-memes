@@ -229,7 +229,6 @@ $("#inputSpacing").addEventListener("input", (e) => {
   $("#bottomText").style.padding = `${e.target.value}px 30px`
 })
 
-
 //INTERLINEADO
 
 $("#lineHeightSelect").addEventListener("input", (e) => {
@@ -239,6 +238,7 @@ $("#lineHeightSelect").addEventListener("input", (e) => {
 $("#lineHeightSelect").addEventListener("input", (e) => {
   $("#bottomText").style.lineHeight = e.target.value
 })
+
 
 
 
