@@ -10,35 +10,15 @@ const $ = (selector) => document.querySelector(selector)
 
 // EVENTOS
 
-
-// $("#btnImg").addEventListener("click", () =>{
-//     $("#bothSections").classList.remove("hidden")
-//     $("#txtSection").style.display = "none"
-// })
-
-// $("#btnTxt").addEventListener("click", () =>{
-//     $("#bothSections").classList.remove("hidden")
-//     $("#imgSection").style.display = "none"
-//     $("#txtSection").style.display = "block"
-// })
-
-// $("#btnCloseSectionImg").addEventListener("click", () => {
-//     $("#bothSections").classList.add("hidden");
-//   });
-
-//   $("#btnCloseSectionTxt").addEventListener("click", () => {
-//     $("#bothSections").classList.add("hidden");
-//   });
-
 // BTN PANEL IMG
 $("#btnImg").addEventListener("click", () =>{
   $("#imgSection").classList.toggle("hidden")
-})
+});
 
 //BTN PANEL TEXT
 $("#btnTxt").addEventListener("click", () =>{
   $("#txtSection").classList.toggle("hidden")
-})
+});
 
 // BTN CERRAR PANEL IMG
 $("#btnCloseSectionImg").addEventListener("click", () => {
@@ -49,6 +29,11 @@ $("#btnCloseSectionImg").addEventListener("click", () => {
 $("#btnCloseSectionTxt").addEventListener("click", () => {
     $("#txtSection").classList.add("hidden");
   });
+
+//URL IMG
+$("#urlImg").addEventListener("input", (e) =>{
+  $("#memeImg").style.backgroundImage = `url(${e.target.value})`
+});   
 
 
 
