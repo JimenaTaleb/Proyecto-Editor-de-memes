@@ -150,6 +150,37 @@ $("#fontSize").addEventListener("input" , (e) => {
   $("#bottomText").style.fontSize = `${e.target.value}px`
 })
 
+//JUSTIFICADO IZQUIERDA
+
+$(".fa-align-left").addEventListener("click", () => {
+  $("#topText").style.textAlign = "left"
+})
+
+$(".fa-align-left").addEventListener("click", () => {
+  $("#bottomText").style.textAlign = "left"
+})
+
+//JUSTIFICADO CENTRO
+
+$(".fa-align-center").addEventListener("click", () => {
+  $("#topText").style.textAlign = "center"
+})
+
+$(".fa-align-center").addEventListener("click", () => {
+  $("#bottomText").style.textAlign = "center"
+})
+
+
+//JUSTIFICADO DERECHA
+
+$(".fa-align-right").addEventListener("click", () => {
+  $("#topText").style.textAlign = "right"
+})
+
+$(".fa-align-right").addEventListener("click", () => {
+  $("#bottomText").style.textAlign = "right"
+})
+
 
 
 
