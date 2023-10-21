@@ -49,7 +49,16 @@ $("#modeOptions").addEventListener("input", (e) =>{
 //FILTROS
 
 const filtersMeme = () =>{
-  $("#memeImg").style.filter = `brightness(${$("#brightness").value}) opacity(${$("#opacity").value}) contrast(${$("#contrast").value}%) blur(${$("#blur").value}px) grayscale(${$("#grayscale").value}%) sepia(${$("#sepia").value}%) hue(${$("#hue").value}deg) saturate(${$("#saturate").value}%) invert(${$("#invert").value})`
+  const brightness = $("#brightness").value
+  const opacity = $("#opacity").value
+  const contrast = $("#contrast").value
+  const blur = $("#blur").value
+  const grayscale = $("#grayscale").value
+  const sepia = $("#sepia").value
+  const hue = $("#hue").value
+  const saturate = $("#saturate").value
+  const invert = $("#invert").value
+  $("#memeImg").style.filter = `brightness(${brightness}) opacity(${opacity}) contrast(${contrast}%) blur(${blur}px) grayscale(${grayscale}%) sepia(${sepia}%) hue-rotate(${hue}deg) saturate(${saturate}%) invert(${invert})`
 }
 
 $("#brightness").addEventListener("input", filtersMeme)
@@ -62,7 +71,22 @@ $("#hue").addEventListener("input", filtersMeme)
 $("#saturate").addEventListener("input", filtersMeme)
 $("#invert").addEventListener("input", filtersMeme)
 
+filtersMeme()
 
+//RESET DE FILTROS
+
+$("#btnResetFilters").addEventListener("click", () =>{
+  $("#brightness").value = "1"
+  $("#opacity").value = "1"
+  $("#contrast").value = "100"
+  $("#blur").value = "0"
+  $("#grayscale").value = "0"
+  $("#sepia").value = "0"
+  $("#hue").value = "0"
+  $("#saturate").value = "100"
+  $("#invert").value = "1"
+  $("#memeImg").style.filter = "none"
+})
 
 
 
