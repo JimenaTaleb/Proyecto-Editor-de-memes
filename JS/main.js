@@ -41,6 +41,11 @@ $("#colorBackgroundImg").addEventListener("input", (e) =>{
   $("#colorBackgroundImgText").innerText = e.target.value
 });
 
+//SELECT BLEND MODE
+$("#modeOptions").addEventListener("input", (e) =>{
+  $("#memeImg").style.backgroundBlendMode = e.target.value
+});
+
 
 
 
