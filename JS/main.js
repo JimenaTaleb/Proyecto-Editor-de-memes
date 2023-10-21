@@ -100,6 +100,18 @@ $("#btnResetFilters").addEventListener("click", () =>{
   $("#memeImg").style.filter = "none"
 })
 
+// TEXTO SUPERIOR
+
+$("#topTextArea").addEventListener("input", (e) =>{
+  $("#topText").innerText = e.target.value
+})
+
+// TEXTO INFERIOR
+
+$("#bottomTextArea").addEventListener("input", (e) =>{
+  $("#bottomText").innerText = e.target.value
+})
+
 
 
 
