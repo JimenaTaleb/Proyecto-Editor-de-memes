@@ -112,7 +112,24 @@ $("#bottomTextArea").addEventListener("input", (e) =>{
   $("#bottomText").innerText = e.target.value
 })
 
+//SACAR TEXTO SUPERIOR 
+$("#withoutTopText").addEventListener("input", (e) => {
+  if (e.target.checked) {
+      $("#topText").style.display = "none"
+  } else {
+      $("#topText").style.display = "block"
+  }
+})
 
+// SACAR TEXTO INFERIOR
+
+$("#withoutBottomText").addEventListener("input", (e) => {
+  if (e.target.checked) {
+      $("#bottomText").style.display = "none"
+  } else {
+      $("#bottomText").style.display = "block"
+  }
+})
 
 
 
