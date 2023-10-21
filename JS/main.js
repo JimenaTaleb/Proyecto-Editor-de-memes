@@ -140,6 +140,16 @@ $("#fontFamilySelect").addEventListener("input", (e) =>{
   $("#bottomText").style.fontFamily = e.target.value
 })
 
+// TAMAÑO FUENTE
+
+$("#fontSize").addEventListener("input" , (e) => {
+  $("#topText").style.fontSize = `${e.target.value}px`
+})
+
+$("#fontSize").addEventListener("input" , (e) => {
+  $("#bottomText").style.fontSize = `${e.target.value}px`
+})
+
 
 
 
