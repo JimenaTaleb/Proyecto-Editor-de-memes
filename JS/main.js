@@ -46,6 +46,22 @@ $("#modeOptions").addEventListener("input", (e) =>{
   $("#memeImg").style.backgroundBlendMode = e.target.value
 });
 
+//FILTROS
+
+const filtersMeme = () =>{
+  $("#memeImg").style.filter = `brightness(${$("#brightness").value}) opacity(${$("#opacity").value}) contrast(${$("#contrast").value}%) blur(${$("#blur").value}px) grayscale(${$("#grayscale").value}%) sepia(${$("#sepia").value}%) hue(${$("#hue").value}deg) saturate(${$("#saturate").value}%) invert(${$("#invert").value})`
+}
+
+$("#brightness").addEventListener("input", filtersMeme)
+$("#opacity").addEventListener("input", filtersMeme)
+$("#contrast").addEventListener("input", filtersMeme)
+$("#blur").addEventListener("input", filtersMeme)
+$("#grayscale").addEventListener("input", filtersMeme)
+$("#sepia").addEventListener("input", filtersMeme)
+$("#hue").addEventListener("input", filtersMeme)
+$("#saturate").addEventListener("input", filtersMeme)
+$("#invert").addEventListener("input", filtersMeme)
+
 
 
 
