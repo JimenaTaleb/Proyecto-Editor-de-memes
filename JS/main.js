@@ -181,6 +181,43 @@ $(".fa-align-right").addEventListener("click", () => {
   $("#bottomText").style.textAlign = "right"
 })
 
+//COLOR DE LA LETRA
+
+$("#fontColor").addEventListener("input", (e) => {
+  $("#topText").style.color = e.target.value
+})
+
+$("#fontColor").addEventListener("input", (e) => {
+  $("#bottomText").style.color = e.target.value
+})
+
+//FONDO DEL TEXTO
+
+$("#fontBackgroundColor").addEventListener("input", (e) => {
+  $("#topText").style.backgroundColor = e.target.value
+})
+
+$("#fontBackgroundColor").addEventListener("input", (e) => {
+  $("#bottomText").style.backgroundColor = e.target.value
+})
+
+//FONDO TRANSPARENTE DEL TEXTO
+
+$("#transparentBackground").addEventListener("input", (e) => {
+  if (e.target.checked) {
+    $("#topText").style.backgroundColor = "transparent"
+} else {
+    $("#topText").style.backgroundColor = $("#fontBackgroundColor").value
+}
+})
+
+$("#transparentBackground").addEventListener("input", (e) => {
+  if (e.target.checked) {
+    $("#bottomText").style.backgroundColor = "transparent"
+} else {
+    $("#bottomText").style.backgroundColor = $("#fontBackgroundColor").value
+}
+})
 
 
 
