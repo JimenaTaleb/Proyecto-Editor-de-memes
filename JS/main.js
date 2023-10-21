@@ -131,6 +131,22 @@ $("#withoutBottomText").addEventListener("input", (e) => {
   }
 })
 
+// FUENTE
+$("#fontFamilySelect").addEventListener("input", (e) =>{
+  $("#topText").style.fontFamily = e.target.value
+})
+
+$("#fontFamilySelect").addEventListener("input", (e) =>{
+  $("#bottomText").style.fontFamily = e.target.value
+})
+
+
+
+
+
+
+
+
 
 
 
