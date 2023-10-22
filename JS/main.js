@@ -18,14 +18,9 @@ const openTextPanel = () =>{
   $("#txtSection").classList.toggle("hidden")
 }
 
-//CERRAR PANEL IMG
-const closeImgPanel = () =>{
-  $("#imgSection").classList.add("hidden");
-}
-
-//CERRAR PANEL TXT
-const closeTextPanel = () =>{
-  $("#txtSection").classList.add("hidden");
+//CERRAR PANELES FUNCION UNICA PARA AMBOS PANELES
+const closePanel = (selector) =>{
+  selector.classList.add("hidden")
 }
 
 //CAMBIAR MODO CLARO-MODO OSCURO
@@ -131,21 +126,18 @@ const selectedFontSize = (e) =>{
   $("#bottomText").style.fontSize = `${e.target.value}px`
 }
 
-//TEXTO JUSTIFICADO HACIA LA IZQUIERDA
-const textAlignLeft = () =>{
-  $("#topText").style.textAlign = "left"
-  $("#bottomText").style.textAlign = "left"
-}
-
-//TEXTO JUSTIFICADO HACIA EL CENTRO
-const textAlignCenter = () =>{
+//TEXTO JUSTIFICADO FUNCION UNICA PARA LOS 3 ESTILOS DE ALINEADO
+const textAlignAll = (align) =>{
+  if(align === "left"){
+    $("#topText").style.textAlign = "left"
+    $("#bottomText").style.textAlign = "left"
+} else if(align === "center"){
   $("#topText").style.textAlign = "center"
   $("#bottomText").style.textAlign = "center"
-}
-//TEXTO JUSTIFICADO HACIA LA DERECHA
-const textAlignRight = () =>{
+} else if(align === "right"){
   $("#topText").style.textAlign = "right"
   $("#bottomText").style.textAlign = "right"
+}
 }
 
 //COLOR DE LA FUENTE
@@ -214,10 +206,14 @@ $("#btnImg").addEventListener("click", openImgPanel)
 $("#btnTxt").addEventListener("click", openTextPanel)
 
 // BTN CERRAR PANEL IMG
-$("#btnCloseSectionImg").addEventListener("click", closeImgPanel)
+$("#btnCloseSectionImg").addEventListener("click", () =>{
+  closePanel($("#imgSection"))
+})
 
 //BTN CERRAR PANEL TEXT  
-$("#btnCloseSectionTxt").addEventListener("click", closeTextPanel)
+$("#btnCloseSectionTxt").addEventListener("click", () =>{
+  closePanel($("#txtSection"))
+})
     
 //MODO CLARO-OSCURO BOTON
 $("#btnTheme").addEventListener("click", changeTheme)
@@ -264,14 +260,19 @@ $("#fontFamilySelect").addEventListener("input", selectedFontFamily)
 $("#fontSize").addEventListener("input", selectedFontSize)
   
 //JUSTIFICADO IZQUIERDA
-$(".fa-align-left").addEventListener("click", textAlignLeft)
+$(".fa-align-left").addEventListener("click", () =>{
+  textAlignAll("left")
+})
   
 //JUSTIFICADO CENTRO
-$(".fa-align-center").addEventListener("click", textAlignCenter)
+$(".fa-align-center").addEventListener("click", () =>{
+  textAlignAll("center")
+})
 
 //JUSTIFICADO DERECHA
-$(".fa-align-right").addEventListener("click", textAlignRight)
-
+$(".fa-align-right").addEventListener("click", () =>{
+  textAlignAll("right")
+})
 //COLOR DE LA LETRA
 $("#fontColor").addEventListener("input", selectedFontColor)
 
