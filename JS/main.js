@@ -259,7 +259,7 @@ $("#btnLightShadow").addEventListener("click", () => {
   $("#bottomText").style.webkitTextStroke = "1px white"
 })
 
-// //CONTORNO OSCURO
+//CONTORNO OSCURO
 
 $("#btnDarkShadow").addEventListener("click", () => {
   $("#topText").style.webkitTextStroke = "1px black"
@@ -270,7 +270,17 @@ $("#btnDarkShadow").addEventListener("click", () => {
 })
 
 
+//DESCARGAR MEME
 
+const downloadMeme = () => {
+  domtoimage.toBlob($(".meme--editor")).then((blob) => {
+      saveAs(blob, "my-meme.png")
+  })
+}
+
+downloadMeme()
+
+$("#btnDownload").addEventListener("click", downloadMeme)
 
 
 
