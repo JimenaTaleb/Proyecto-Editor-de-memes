@@ -11,11 +11,13 @@ const $ = (selector) => document.querySelector(selector)
 //ABRIR PANEL DE EDICION DE IMAGEN
 const openImgPanel = () =>{
   $("#imgSection").classList.toggle("hidden")
+  $("#txtSection").classList.add("hidden")
 }
 
 //ABRIR PANEL DE EDICION DE TEXTO
 const openTextPanel = () =>{
   $("#txtSection").classList.toggle("hidden")
+  $("#imgSection").classList.add("hidden")
 }
 
 //CERRAR PANELES FUNCION UNICA PARA AMBOS PANELES

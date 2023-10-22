@@ -437,7 +437,7 @@ button:hover {
 
   .section--img{
   display: block;
-  }
+  } 
 
   #btnCloseSectionImg, #btnCloseSectionTxt{
     display: none;
