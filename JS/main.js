@@ -239,6 +239,36 @@ $("#lineHeightSelect").addEventListener("input", (e) => {
   $("#bottomText").style.lineHeight = e.target.value
 })
 
+//CONTORNO NINGUNO
+
+$("#btnNoneShadow").addEventListener("click", () => {
+  $("#topText").style.webkitTextStroke = "transparent"
+})
+
+$("#btnNoneShadow").addEventListener("click", () => {
+  $("#bottomText").style.webkitTextStroke = "transparent"
+})
+
+//CONTORNO CLARO
+
+$("#btnLightShadow").addEventListener("click", () => {
+  $("#topText").style.webkitTextStroke = "1px white"
+})
+
+$("#btnLightShadow").addEventListener("click", () => {
+  $("#bottomText").style.webkitTextStroke = "1px white"
+})
+
+// //CONTORNO OSCURO
+
+$("#btnDarkShadow").addEventListener("click", () => {
+  $("#topText").style.webkitTextStroke = "1px black"
+})
+
+$("#btnDarkShadow").addEventListener("click", () => {
+  $("#bottomText").style.webkitTextStroke = "1px black"
+})
+
 
 
 
