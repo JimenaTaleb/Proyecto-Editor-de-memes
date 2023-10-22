@@ -8,7 +8,6 @@
 //FUNCION $ PARA LLAMAR A LOS SELECTORES
 const $ = (selector) => document.querySelector(selector)
 
-
 //ABRIR PANEL DE EDICION DE IMAGEN
 const openImgPanel = () =>{
   $("#imgSection").classList.toggle("hidden")
@@ -39,6 +38,13 @@ const changeTheme = () =>{
   }
   $("#lightbulb--off").classList.toggle("hidden")
   $("#lightbulb--on").classList.toggle("hidden")
+}
+
+//DESCARGAR MEME
+const downloadMeme = () => {
+  domtoimage.toBlob($(".meme--editor")).then((blob) => {
+      saveAs(blob, "my-meme.png")
+  })
 }
 
 //INPUT URL IMAGEN
@@ -195,13 +201,9 @@ const darkTextShadow = () =>{
   $("#bottomText").style.webkitTextStroke = "1px black"
 }
 
-//DESCARGAR MEME
-const downloadMeme = () => {
-  domtoimage.toBlob($(".meme--editor")).then((blob) => {
-      saveAs(blob, "my-meme.png")
-  })
-}
+//INICIALIZAR PROYECTO
 
+const initializeProject = () => {
 
 // EVENTOS
 
@@ -297,7 +299,9 @@ $("#btnDarkShadow").addEventListener("click", darkTextShadow)
 //DESCARGAR MEME
 $("#btnDownload").addEventListener("click", downloadMeme)
 
+}
 
+window.addEventListener("load", initializeProject)
 
 
 
