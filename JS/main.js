@@ -5,33 +5,32 @@
 
 // FUNCIONES
 
+//FUNCION $ PARA LLAMAR A LOS SELECTORES
 const $ = (selector) => document.querySelector(selector)
 
 
-// EVENTOS
-
-// BTN PANEL IMG
-$("#btnImg").addEventListener("click", () =>{
+//ABRIR PANEL DE EDICION DE IMAGEN
+const openImgPanel = () =>{
   $("#imgSection").classList.toggle("hidden")
-});
+}
 
-//BTN PANEL TEXT
-$("#btnTxt").addEventListener("click", () =>{
+//ABRIR PANEL DE EDICION DE TEXTO
+const openTextPanel = () =>{
   $("#txtSection").classList.toggle("hidden")
-});
+}
 
-// BTN CERRAR PANEL IMG
-$("#btnCloseSectionImg").addEventListener("click", () => {
-    $("#imgSection").classList.add("hidden");
-  });
+//CERRAR PANEL IMG
+const closeImgPanel = () =>{
+  $("#imgSection").classList.add("hidden");
+}
 
-//BTN CERRAR PANEL TEXT  
-$("#btnCloseSectionTxt").addEventListener("click", () => {
-    $("#txtSection").classList.add("hidden");
-  });
+//CERRAR PANEL TXT
+const closeTextPanel = () =>{
+  $("#txtSection").classList.add("hidden");
+}
 
-//MODO CLARO OSCURO BOTON
-$("#btnTheme").addEventListener("click", () => {
+//CAMBIAR MODO CLARO-MODO OSCURO
+const changeTheme = () =>{
   const currentTheme = $("body").getAttribute("data-theme")
   if (currentTheme) {
       $("body").removeAttribute("data-theme", "light--theme")
@@ -40,26 +39,25 @@ $("#btnTheme").addEventListener("click", () => {
   }
   $("#lightbulb--off").classList.toggle("hidden")
   $("#lightbulb--on").classList.toggle("hidden")
-});  
+}
 
-//URL IMG
-$("#urlImg").addEventListener("input", (e) =>{
+//INPUT URL IMAGEN
+const inputUrlImg = (e) =>{
   $("#memeImg").style.backgroundImage = `url(${e.target.value})`
-});   
+}
 
-//FONDO
-$("#colorBackgroundImg").addEventListener("input", (e) =>{
+//CAMBIAR EL FONDO
+const changeBackgroundColor = (e) =>{
   $("#memeImg").style.backgroundColor = e.target.value
   $("#colorBackgroundImgText").innerText = e.target.value
-});
+}
 
-//SELECT BLEND MODE
-$("#modeOptions").addEventListener("input", (e) =>{
+//BLEND MODE
+const selectBlendMode = (e) =>{
   $("#memeImg").style.backgroundBlendMode = e.target.value
-});
+}
 
 //FILTROS
-
 const filtersMeme = () =>{
   const brightness = $("#brightness").value
   const opacity = $("#opacity").value
@@ -73,21 +71,8 @@ const filtersMeme = () =>{
   $("#memeImg").style.filter = `brightness(${brightness}) opacity(${opacity}) contrast(${contrast}%) blur(${blur}px) grayscale(${grayscale}%) sepia(${sepia}%) hue-rotate(${hue}deg) saturate(${saturate}%) invert(${invert})`
 }
 
-$("#brightness").addEventListener("input", filtersMeme)
-$("#opacity").addEventListener("input", filtersMeme)
-$("#contrast").addEventListener("input", filtersMeme)
-$("#blur").addEventListener("input", filtersMeme)
-$("#grayscale").addEventListener("input", filtersMeme)
-$("#sepia").addEventListener("input", filtersMeme)
-$("#hue").addEventListener("input", filtersMeme)
-$("#saturate").addEventListener("input", filtersMeme)
-$("#invert").addEventListener("input", filtersMeme)
-
-filtersMeme()
-
-//RESET DE FILTROS
-
-$("#btnResetFilters").addEventListener("click", () =>{
+//RESET DE LOS FILTROS
+const resetFiltersMeme = () =>{
   $("#brightness").value = "1"
   $("#opacity").value = "1"
   $("#contrast").value = "100"
@@ -98,189 +83,223 @@ $("#btnResetFilters").addEventListener("click", () =>{
   $("#saturate").value = "100"
   $("#invert").value = "1"
   $("#memeImg").style.filter = "none"
-})
+}
 
-// TEXTO SUPERIOR
-
-$("#topTextArea").addEventListener("input", (e) =>{
+//INPUT TEXTO SUPERIOR
+const inputTopText = (e) =>{
   $("#topText").innerText = e.target.value
-})
+} 
 
-// TEXTO INFERIOR
-
-$("#bottomTextArea").addEventListener("input", (e) =>{
+//INPUT TEXTO INFERIOR
+const inputBottomText = (e) =>{
   $("#bottomText").innerText = e.target.value
-})
+} 
 
-//SACAR TEXTO SUPERIOR 
-$("#withoutTopText").addEventListener("input", (e) => {
+//SIN TEXTO SUPERIOR
+const withOutTopText = (e) =>{
   if (e.target.checked) {
-      $("#topText").style.display = "none"
-  } else {
-      $("#topText").style.display = "block"
-  }
-})
+    $("#topText").style.display = "none"
+} else {
+    $("#topText").style.display = "block"
+}
+}
 
-// SACAR TEXTO INFERIOR
-
-$("#withoutBottomText").addEventListener("input", (e) => {
+//SIN TEXTO INFERIOR
+const withOutBottomText = (e) =>{
   if (e.target.checked) {
-      $("#bottomText").style.display = "none"
-  } else {
-      $("#bottomText").style.display = "block"
-  }
-})
+    $("#bottomText").style.display = "none"
+} else {
+    $("#bottomText").style.display = "block"
+}
+}
 
-// FUENTE
-$("#fontFamilySelect").addEventListener("input", (e) =>{
+//FUENTE
+const selectedFontFamily = (e) =>{
   $("#topText").style.fontFamily = e.target.value
-})
-
-$("#fontFamilySelect").addEventListener("input", (e) =>{
   $("#bottomText").style.fontFamily = e.target.value
-})
+}
 
-// TAMAÑO FUENTE
-
-$("#fontSize").addEventListener("input" , (e) => {
+//TAMAÑO FUENTE
+const selectedFontSize = (e) =>{
   $("#topText").style.fontSize = `${e.target.value}px`
-})
-
-$("#fontSize").addEventListener("input" , (e) => {
   $("#bottomText").style.fontSize = `${e.target.value}px`
-})
+}
 
-//JUSTIFICADO IZQUIERDA
-
-$(".fa-align-left").addEventListener("click", () => {
+//TEXTO JUSTIFICADO HACIA LA IZQUIERDA
+const textAlignLeft = () =>{
   $("#topText").style.textAlign = "left"
-})
-
-$(".fa-align-left").addEventListener("click", () => {
   $("#bottomText").style.textAlign = "left"
-})
+}
 
-//JUSTIFICADO CENTRO
-
-$(".fa-align-center").addEventListener("click", () => {
+//TEXTO JUSTIFICADO HACIA EL CENTRO
+const textAlignCenter = () =>{
   $("#topText").style.textAlign = "center"
-})
-
-$(".fa-align-center").addEventListener("click", () => {
   $("#bottomText").style.textAlign = "center"
-})
-
-
-//JUSTIFICADO DERECHA
-
-$(".fa-align-right").addEventListener("click", () => {
+}
+//TEXTO JUSTIFICADO HACIA LA DERECHA
+const textAlignRight = () =>{
   $("#topText").style.textAlign = "right"
-})
-
-$(".fa-align-right").addEventListener("click", () => {
   $("#bottomText").style.textAlign = "right"
-})
+}
 
-//COLOR DE LA LETRA
-
-$("#fontColor").addEventListener("input", (e) => {
+//COLOR DE LA FUENTE
+const selectedFontColor = (e) =>{
   $("#topText").style.color = e.target.value
-})
-
-$("#fontColor").addEventListener("input", (e) => {
   $("#bottomText").style.color = e.target.value
-})
+}
 
-//FONDO DEL TEXTO
-
-$("#fontBackgroundColor").addEventListener("input", (e) => {
+//FONDO DE LA TIPOGRAFIA
+const selectedFontBackgroundColor = (e) =>{
   $("#topText").style.backgroundColor = e.target.value
-})
-
-$("#fontBackgroundColor").addEventListener("input", (e) => {
   $("#bottomText").style.backgroundColor = e.target.value
-})
+}
 
-//FONDO TRANSPARENTE DEL TEXTO
-
-$("#transparentBackground").addEventListener("input", (e) => {
+//FONDO TRANSPARENTE
+const withOutFontBackground = (e) =>{
   if (e.target.checked) {
     $("#topText").style.backgroundColor = "transparent"
-} else {
-    $("#topText").style.backgroundColor = $("#fontBackgroundColor").value
-}
-})
-
-$("#transparentBackground").addEventListener("input", (e) => {
-  if (e.target.checked) {
     $("#bottomText").style.backgroundColor = "transparent"
 } else {
+    $("#topText").style.backgroundColor = $("#fontBackgroundColor").value
     $("#bottomText").style.backgroundColor = $("#fontBackgroundColor").value
 }
-})
+}
 
 //ESPACIADO
-
-$("#inputSpacing").addEventListener("input", (e) => {
+const selectedSpacing = (e) =>{
   $("#topText").style.padding = `${e.target.value}px 30px`
-})
-
-$("#inputSpacing").addEventListener("input", (e) => {
   $("#bottomText").style.padding = `${e.target.value}px 30px`
-})
+}
 
-//INTERLINEADO
-
-$("#lineHeightSelect").addEventListener("input", (e) => {
+//INETRLINEADO
+const selectedLineHeight = (e) =>{
   $("#topText").style.lineHeight = e.target.value
-})
-
-$("#lineHeightSelect").addEventListener("input", (e) => {
   $("#bottomText").style.lineHeight = e.target.value
-})
+}
 
-//CONTORNO NINGUNO
-
-$("#btnNoneShadow").addEventListener("click", () => {
+//SIN CONTORNO
+const withOutTextShadow = () =>{
   $("#topText").style.webkitTextStroke = "transparent"
-})
-
-$("#btnNoneShadow").addEventListener("click", () => {
   $("#bottomText").style.webkitTextStroke = "transparent"
-})
+}
 
 //CONTORNO CLARO
-
-$("#btnLightShadow").addEventListener("click", () => {
+const lightTextShadow = () =>{
   $("#topText").style.webkitTextStroke = "1px white"
-})
-
-$("#btnLightShadow").addEventListener("click", () => {
   $("#bottomText").style.webkitTextStroke = "1px white"
-})
+}
 
 //CONTORNO OSCURO
-
-$("#btnDarkShadow").addEventListener("click", () => {
+const darkTextShadow = () =>{
   $("#topText").style.webkitTextStroke = "1px black"
-})
-
-$("#btnDarkShadow").addEventListener("click", () => {
   $("#bottomText").style.webkitTextStroke = "1px black"
-})
-
+}
 
 //DESCARGAR MEME
-
 const downloadMeme = () => {
   domtoimage.toBlob($(".meme--editor")).then((blob) => {
       saveAs(blob, "my-meme.png")
   })
 }
 
-downloadMeme()
 
+// EVENTOS
+
+// BTN PANEL IMG
+$("#btnImg").addEventListener("click", openImgPanel)
+
+//BTN PANEL TEXT
+$("#btnTxt").addEventListener("click", openTextPanel)
+
+// BTN CERRAR PANEL IMG
+$("#btnCloseSectionImg").addEventListener("click", closeImgPanel)
+
+//BTN CERRAR PANEL TEXT  
+$("#btnCloseSectionTxt").addEventListener("click", closeTextPanel)
+    
+//MODO CLARO-OSCURO BOTON
+$("#btnTheme").addEventListener("click", changeTheme)
+
+//URL IMG
+$("#urlImg").addEventListener("input", inputUrlImg)
+
+//FONDO
+$("#colorBackgroundImg").addEventListener("input", changeBackgroundColor)
+
+//SELECT BLEND MODE
+$("#modeOptions").addEventListener("input", selectBlendMode)
+
+//FILTROS
+$("#brightness").addEventListener("input", filtersMeme)
+$("#opacity").addEventListener("input", filtersMeme)
+$("#contrast").addEventListener("input", filtersMeme)
+$("#blur").addEventListener("input", filtersMeme)
+$("#grayscale").addEventListener("input", filtersMeme)
+$("#sepia").addEventListener("input", filtersMeme)
+$("#hue").addEventListener("input", filtersMeme)
+$("#saturate").addEventListener("input", filtersMeme)
+$("#invert").addEventListener("input", filtersMeme)
+
+//RESET DE FILTROS
+$("#btnResetFilters").addEventListener("click", resetFiltersMeme)
+
+// TEXTO SUPERIOR
+$("#topTextArea").addEventListener("input", inputTopText)
+
+// TEXTO INFERIOR
+$("#bottomTextArea").addEventListener("input", inputBottomText)
+
+//SACAR TEXTO SUPERIOR 
+$("#withoutTopText").addEventListener("input", withOutTopText)
+
+// SACAR TEXTO INFERIOR
+$("#withoutBottomText").addEventListener("input", withOutBottomText)
+
+// FUENTE
+$("#fontFamilySelect").addEventListener("input", selectedFontFamily)
+
+// TAMAÑO FUENTE
+$("#fontSize").addEventListener("input", selectedFontSize)
+  
+//JUSTIFICADO IZQUIERDA
+$(".fa-align-left").addEventListener("click", textAlignLeft)
+  
+//JUSTIFICADO CENTRO
+$(".fa-align-center").addEventListener("click", textAlignCenter)
+
+//JUSTIFICADO DERECHA
+$(".fa-align-right").addEventListener("click", textAlignRight)
+
+//COLOR DE LA LETRA
+$("#fontColor").addEventListener("input", selectedFontColor)
+
+//FONDO DEL TEXTO
+$("#fontBackgroundColor").addEventListener("input", selectedFontBackgroundColor)
+
+//FONDO TRANSPARENTE DEL TEXTO
+$("#transparentBackground").addEventListener("input", withOutFontBackground)
+
+//ESPACIADO
+$("#inputSpacing").addEventListener("input", selectedSpacing)
+
+//INTERLINEADO
+$("#lineHeightSelect").addEventListener("input", selectedLineHeight)
+
+//CONTORNO NINGUNO
+$("#btnNoneShadow").addEventListener("click", withOutTextShadow)
+
+//CONTORNO CLARO
+$("#btnLightShadow").addEventListener("click", lightTextShadow)
+
+//CONTORNO OSCURO
+$("#btnDarkShadow").addEventListener("click", darkTextShadow)
+
+//DESCARGAR MEME
 $("#btnDownload").addEventListener("click", downloadMeme)
+
+
+
+
 
 
 
