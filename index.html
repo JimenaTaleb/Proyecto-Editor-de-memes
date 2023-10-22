@@ -232,13 +232,15 @@
                     </select>
                 </label>
             </div>
-            <div>
+            <div class="font-size-align">
                 <label>
                     <input type="number" value="16" min="12" class="font--size" id="fontSize">
                 </label>
-                <button><i class="txt--align fa-solid fa-align-left"></i></button>
-                <button><i class="txt--align fa-solid fa-align-center"></i></button>
-                <button><i class="txt--align fa-solid fa-align-right"></i></button>
+                <div class="txt--align">
+                <button><i class="fa-solid fa-align-left"></i></button>
+                <button><i class="fa-solid fa-align-center"></i></button>
+                <button><i class="fa-solid fa-align-right"></i></button>
+              </div>
             </div>
         </div>
 
@@ -277,7 +279,7 @@
 
         <div class="spacing">
             <h3>ESPACIADO</h3>
-            <label>
+            <label class="label--spacing">
                 <input type="number" min="10" max="50" value="35" class="number--spacing" id="inputSpacing">
             </label>
         </div>

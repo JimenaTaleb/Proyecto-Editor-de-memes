@@ -35,15 +35,23 @@
 body {
   background-color: var(--color-background-main);
   height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   position: relative;
+}
+
+button{
+  all: unset;
+  color: var(--color-text);
+  font-size: var(--size-btn);
+  border-radius: var(--border-btn);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--color-btn-hover);
 }
 
 /* Inicio el proyecto estilando en mobile first, mq en 320px: */
 @media (min-width: 320px) {
-  /* Comienzo a estilar el header */
   .header {
     width: 100%;
     background-color: var(--color-background-header);
@@ -68,12 +76,7 @@ body {
 
   .header--nav button,
   .download--btn {
-    all: unset;
-    color: var(--color-text);
-    font-size: var(--size-btn);
     padding: 8px 10px;
-    border-radius: var(--border-btn);
-    cursor: pointer;
   }
 
   .header--nav button i {
@@ -82,21 +85,9 @@ body {
     font-size: var(--size-btn);
   }
 
-  /* #lightbulb--off, #lightbulb--on{
-    color: var(--color-text);
-    padding-right: 3px;
-    font-size: var(--size-btn);
-  } */
-
-  button:hover {
-    background-color: var(--color-btn-hover);
-  }
-
   .hidden {
     display: none;
   }
-
-  /* Comienzo a estilar el main */
 
   .meme--container {
     width: 100%;
@@ -154,30 +145,14 @@ body {
     padding: 6px;
   }
 
-  /* Comienzo a estilar el aside */
-
-  /* .section--panels {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
-  } */
-
-  /* Del aside, comienzo a estilar la seccion de la img*/
-
   .section--img,
   .section--txt {
-    /* display: block; */
     position: absolute;
     top: 0;
     right: 0;
     z-index: 10;
     width: 100%;
     height: 100%;
-    /* display: flex;
-    flex-direction: column; */
     gap: 0.7rem;
     padding: 1.3rem;
     color: var(--color-text);
@@ -185,7 +160,6 @@ body {
   }
 
   #btnCloseSectionImg, #btnCloseSectionTxt{
-    all: unset;
     position: relative;
     top: 5px;
     left: 250px;
@@ -207,7 +181,7 @@ body {
     margin: 0.5rem 0rem;
   }
 
-  #url--img,
+  #urlImg,
   .number--spacing,
   textarea {
     all: unset;
@@ -223,21 +197,26 @@ body {
   }
 
   .color--background {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap:5%;
   }
 
-  .background {
-    width: 7rem;
+  .background, .panel--background {
+    width: 45%;
     height: 2.5em;
-    display: flex;
-    flex-direction: row;
-    gap: 0.6rem;
     border-radius: var(--border-btn);
     color: var(--color-text);
     background-color: var(--color-background-btn);
-    padding: 0.5rem 0.9rem;
+  }
+
+  .background{
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 1.5rem;
+    gap: 0.5rem;
   }
 
   span {
@@ -246,7 +225,8 @@ body {
 
   .mode--input,
   #line--height-select,
-  #font-select {
+  #fontFamilySelect,
+  #lineHeightSelect {
     width: 7rem;
     height: 2.5rem;
     -moz-appearance: none;
@@ -257,33 +237,46 @@ body {
     padding: 0.5rem 0.9rem;
   }
 
-  #font-select {
+  .label--spacing{
     width: 100%;
   }
 
+  #fontFamilySelect{
+    width: 100%;
+  }
+
+  .font-size-align{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.3rem;
+  }
+  
   .font--size {
-    width: 42%;
+    width: 95%;
+    height: 2rem;
     -moz-appearance: none;
     background-color: var(--color-background-btn);
     border: none;
     border-radius: var(--border-btn);
     color: var(--color-text);
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 0.9rem;
   }
 
-  .txt--align {
+  .txt--align{
+    width: 50%;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  .txt--align button{
+    padding: 0.5rem 0.6rem;
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    margin: 0.5rem 0.1rem;
     background-color: var(--color-background-btn);
-    border: none;
-    border-radius: var(--border-btn);
-    color: var(--color-text);
   }
-
-  /* Para que el input quede en forma circular busque
-  varias alternativas pero no me dieron resultado. 
-  Luego,en stackoverflow encontre esta solucion: */
 
   input[type="color"] {
     width: 1.6rem;
@@ -313,9 +306,6 @@ body {
     flex-direction: column;
   }
 
-  /* Para este input tambien investigue y encontre 
-    el codigo en  internet*/
-
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 16px;
@@ -326,18 +316,15 @@ body {
   }
 
   .reset--btn {
-    all: unset;
     width: 9rem;
     height: 1.8rem;
     font-size: 1rem;
     background-color: var(--color-background-btn);
-    border-radius: var(--border-btn);
     padding: 0.2rem 1rem;
+    margin-top: 1rem;
   }
 
-  /* Del aside, comienzo a estilar la seccion del txt*/
-
-  #line--height-select {
+  #lineHeightSelect {
     width: 100%;
   }
 
@@ -368,12 +355,10 @@ body {
     text-align: center;
   }
 
-  .outline button {
-    all: unset;
+  .text--shadow button {
     width: 25%;
     height: 2.3rem;
     background-color: var(--color-background-btn);
-    border-radius: var(--border-btn);
     text-align: center;
     font-size: 0.8rem;
   }
