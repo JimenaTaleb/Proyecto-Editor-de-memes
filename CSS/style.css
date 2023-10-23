@@ -145,8 +145,8 @@ button:hover {
   }
 
   .meme--img {
-    width: 100%;
-    height: 100%;
+    width: 280px;
+    height: 240px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -422,6 +422,7 @@ button:hover {
   .meme--editor {
     width: 610px;
     height: 610px;
+    margin-top: 20px;
   }
 
   .meme--img {
