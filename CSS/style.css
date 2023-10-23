@@ -183,7 +183,7 @@ button:hover {
   #btnCloseSectionImg, #btnCloseSectionTxt{
     position: relative;
     top: 5px;
-    left: 250px;
+    left: 90%;
   }
 
   .close--btn i {
