@@ -2,25 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Maria Jimena Taleb" />
     <meta
       name="description"
       content="Editor de memes, se pueden editar estilos y texto, y descargar el meme"
     />
-    <meta property="og:title" content="Editor de memes">
-    <meta property="og:site-name" content="Editor de memes">
-    <meta property="og:description" content="Editor de memes, se pueden editar estilos y texto, y descargar el meme">
-    <meta property="og:type" content="website">
+    <meta property="og:title" content="Editor de memes" />
+    <meta property="og:site-name" content="Editor de memes" />
+    <meta
+      property="og:description"
+      content="Editor de memes, se pueden editar estilos y texto, y descargar el meme"
+    />
+    <meta property="og:type" content="website" />
     <script
       src="https://kit.fontawesome.com/48ddeb67c9.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="img/logo.png" type="images/png"/>
-    <link rel="stylesheet" href="normalize.css"/>
-    <link rel="stylesheet" href="CSS/style.css"/>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+      integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+      integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="img/logo.png" type="images/png" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <title>Editor de memes by Ji</title>
   </head>
   <body>
@@ -31,10 +42,16 @@
         <button class="image--btn" id="btnImg">
           <i class="fa-regular fa-image"></i>Imagen
         </button>
-        <button class="text--btn" id="btnTxt"><i class="fa-solid fa-font"></i>Texto</button>
+        <button class="text--btn" id="btnTxt">
+          <i class="fa-solid fa-font"></i>Texto
+        </button>
         <button class="change-theme--btn" id="btnTheme">
-          <i class="fa-regular fa-lightbulb" id="lightbulb--off"><span>Modo oscuro</span></i>
-          <i class="fa-regular fa-lightbulb hidden" id="lightbulb--on"><span>Modo claro</span></i>
+          <i class="fa-regular fa-lightbulb" id="lightbulb--off"
+            ><span>Modo oscuro</span></i
+          >
+          <i class="fa-regular fa-lightbulb hidden" id="lightbulb--on"
+            ><span>Modo claro</span></i
+          >
         </button>
       </nav>
     </header>
@@ -51,255 +68,274 @@
       </button>
     </main>
 
-    <!-- Comienza el aside, que contendra dos section, una para
-      editar propiedades de imagen y otra las propiedades de texto.
-     -->
+    <!-- Comienza el section de IMG-->
 
-    <!-- <aside class="section--panels hidden" id="bothSections"> -->
-<!-- Comienza el section de IMG-->
-      
-      <section class="section--img hidden" id="imgSection">
-        <button class="close--btn" id="btnCloseSectionImg"><i class="fa-solid fa-xmark"></i></button>
-        <h2>IMAGEN</h2>
-        <div>
-          <h3>URL</h3>
-          <input type="url" id="urlImg" />
-        </div>
-        <div>
-          <h3>FONDO</h3>
-          <div class="color--background">
-            <div class="background">
-              <input type="color" id="colorBackgroundImg" value="#ffffff" />
-              <span id="colorBackgroundImgText">#ffffff</span>
-            </div>
-            <div class="panel--background">
-              <select id="modeOptions" class="mode--input">
-                <option value="unset">Ninguno</option>
-                <option value="lighten">Aclarar</option>
-                <option value="darken">Oscurecer</option>
-                <option value="difference">Diferencia</option>
-                <option value="luminosity">Luminosidad</option>
-                <option value="multiply">Multiplicar</option>
-              </select>
-            </div>
+    <section class="section--img hidden" id="imgSection">
+      <button class="close--btn" id="btnCloseSectionImg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2>IMAGEN</h2>
+      <div>
+        <h3>URL</h3>
+        <input type="url" id="urlImg" />
+      </div>
+      <div>
+        <h3>FONDO</h3>
+        <div class="color--background">
+          <div class="background">
+            <input type="color" id="colorBackgroundImg" value="#ffffff" />
+            <span id="colorBackgroundImgText">#ffffff</span>
+          </div>
+          <div class="panel--background">
+            <select id="modeOptions" class="mode--input">
+              <option value="unset">Ninguno</option>
+              <option value="lighten">Aclarar</option>
+              <option value="darken">Oscurecer</option>
+              <option value="difference">Diferencia</option>
+              <option value="luminosity">Luminosidad</option>
+              <option value="multiply">Multiplicar</option>
+            </select>
           </div>
         </div>
-        <div>
-          <h3>FILTROS</h3>
-          <div class="editor filters--brightness">
-            <label for="filters--brightness">BRILLO</label>
-            <input
-              type="range"
-              id="brightness"
-              min="0"
-              max="1"
-              step="0.1"
-              value="1"
-            />
-          </div>
-          <div class="editor filters--opacity">
-            <label for="filters--opacity">OPACIDAD</label>
-            <input
-              type="range"
-              id="opacity"
-              min="0"
-              max="1"
-              step="0.1"
-              value="1"
-            />
-          </div>
-          <div class="editor filters--contrast">
-            <label for="filters--contrast">CONTRASTE</label>
-            <input
-              type="range"
-              id="contrast"
-              min="100"
-              max="1000"
-              step="1"
-              value="100"
-            />
-          </div>
-          <div class="editor filters--blur">
-            <label for="filters--blur">DESENFOQUE</label>
-            <input
-              type="range"
-              id="blur"
-              min="0"
-              max="10"
-              step="0.1"
-              value="0"
-            />
-          </div>
-          <div class="editor filters--grayscale">
-            <label for="filters--grayscale">ESCALA DE GRISES</label>
-            <input
-              type="range"
-              id="grayscale"
-              min="0"
-              max="100"
-              step="1"
-              value="0"
-            />
-          </div>
-          <div class="editor filters--sepia">
-            <label for="filters--sepia">SEPIA</label>
-            <input
-              type="range"
-              id="sepia"
-              min="0"
-              max="100"
-              step="1"
-              value="0"
-            />
-          </div>
-          <div class="editor filters--hue">
-            <label for="filters--hue">HUE</label>
-            <input
-              type="range"
-              id="hue"
-              min="0"
-              max="359"
-              step="1"
-              value="0"
-            />
-          </div>
-          <div class="editor filters--saturate">
-            <label for="filters--saturate">SATURADO</label>
-            <input
-              type="range"
-              id="saturate"
-              min="100"
-              max="1000"
-              step="10"
-              value="100"
-            />
-          </div>
-          <div class="editor filters--invert">
-            <label for="filters--invert">NEGATIVO</label>
-            <input
-              type="range"
-              id="invert"
-              min="0"
-              max="1"
-              step="0.1"
-              value="0"
-            />
-          </div>
+      </div>
+      <div>
+        <h3>FILTROS</h3>
+        <div class="editor filters--brightness">
+          <label for="filters--brightness">BRILLO</label>
+          <input
+            type="range"
+            id="brightness"
+            min="0"
+            max="1"
+            step="0.1"
+            value="1"
+          />
         </div>
-        <button class="reset--btn" id="btnResetFilters">Reestablecer filtros</button>
-      </section>
-
-      <!-- Comienza el section de TEXTO-->
-
-      <section class="section--txt hidden" id="txtSection">
-        <button class="close--btn" id="btnCloseSectionTxt"><i class="fa-solid fa-xmark"></i></button>
-        <h2>TEXTO</h2>
-
-        <div class="text--editor">
-            <div class="text--top">
-                <h3>SUPERIOR</h3>
-                <textarea name="top--text" id="topTextArea" rows="1">TOP TEXT</textarea>
-                <label>
-                    <input type="checkbox" name="no--top-text" id="withoutTopText">
-                    Sin texto superior
-                </label>
-
-            </div>
-            <div class="text--bottom">
-                <h3>INFERIOR</h3>
-                <textarea name="bottom--text" id="bottomTextArea" rows="1">BOTTOM TEXT</textarea>
-                <label>
-                    <input type="checkbox" name="no--bottom-text" id="withoutBottomText">
-                    Sin texto inferior
-                </label>
-            </div>
+        <div class="editor filters--opacity">
+          <label for="filters--opacity">OPACIDAD</label>
+          <input
+            type="range"
+            id="opacity"
+            min="0"
+            max="1"
+            step="0.1"
+            value="1"
+          />
         </div>
-
-        <div class="family--font">
-            <h3>FUENTE</h3>
-            <div>
-                <label>
-                    <select name="font--family" id="fontFamilySelect">
-                        <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
-                        <option value="monospace">Andale Mono</option>
-                        <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-                        <option value="Trebuchet MS">Trebuchet MS</option>
-                        <option value="Comic Sans MS">Comic Sans MS</option>
-                        <option value="Helvetica">Helvetica</option>
-                        <option value="Impact" selected>Impact</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                    </select>
-                </label>
-            </div>
-            <div class="font-size-align">
-                <label>
-                    <input type="number" value="16" min="12" class="font--size" id="fontSize">
-                </label>
-                <div class="txt--align">
-                <button><i class="fa-solid fa-align-left"></i></button>
-                <button><i class="fa-solid fa-align-center"></i></button>
-                <button><i class="fa-solid fa-align-right"></i></button>
-              </div>
-            </div>
+        <div class="editor filters--contrast">
+          <label for="filters--contrast">CONTRASTE</label>
+          <input
+            type="range"
+            id="contrast"
+            min="100"
+            max="1000"
+            step="1"
+            value="100"
+          />
         </div>
-
-        <div class="color">
-            <div class="color--panel">
-                <div>
-                    <h3>COLOR</h3>
-                    <label class="label">
-                        <input type="color" id="fontColor" value="#000000"> 
-                        <span>#000000</span>
-                    </label>
-                </div>
-
-                <div>
-                    <h3>FONDO</h3>
-                    <label class="label">
-                        <input type="color" id="fontBackgroundColor" value="#FFFFFF"> 
-                        <span>#FFFFFF</span>
-                    </label>
-                </div>
-            </div>
-            <label>
-                <input type="checkbox" name="background--checkbox" id="transparentBackground">
-                Fondo transparente
-            </label>
+        <div class="editor filters--blur">
+          <label for="filters--blur">DESENFOQUE</label>
+          <input type="range" id="blur" min="0" max="10" step="0.1" value="0" />
         </div>
-
-        <div class="text--shadow">
-            <h3>CONTORNO</h3>
-            <div>
-                <button type="button" class="btn--txt-shadow" id="btnNoneShadow">Ninguno</button>
-                <button type="button" class="btn--txt-shadow" id="btnLightShadow">Claro</button>
-                <button type="button" class="btn--txt-shadow" id="btnDarkShadow">Oscuro</button>
-            </div>
+        <div class="editor filters--grayscale">
+          <label for="filters--grayscale">ESCALA DE GRISES</label>
+          <input
+            type="range"
+            id="grayscale"
+            min="0"
+            max="100"
+            step="1"
+            value="0"
+          />
         </div>
-
-        <div class="spacing">
-            <h3>ESPACIADO</h3>
-            <label class="label--spacing">
-                <input type="number" min="10" max="50" value="35" class="number--spacing" id="inputSpacing">
-            </label>
+        <div class="editor filters--sepia">
+          <label for="filters--sepia">SEPIA</label>
+          <input type="range" id="sepia" min="0" max="100" step="1" value="0" />
         </div>
-
-        <div class="line--spacing">
-            <h3>INTERLINEADO</h3>
-            <label>
-                <select name="line--height-select" id="lineHeightSelect">
-                    <option value="0.8">0.8</option>
-                    <option value="1">1</option>
-                    <option value="1.2" selected>1.2</option>
-                    <option value="1.5">1.5</option>
-                    <option value="2">2</option>
-                    <option value="2.5">2.5</option>
-                </select>
-            </label>
+        <div class="editor filters--hue">
+          <label for="filters--hue">HUE</label>
+          <input type="range" id="hue" min="0" max="359" step="1" value="0" />
         </div>
+        <div class="editor filters--saturate">
+          <label for="filters--saturate">SATURADO</label>
+          <input
+            type="range"
+            id="saturate"
+            min="100"
+            max="1000"
+            step="10"
+            value="100"
+          />
+        </div>
+        <div class="editor filters--invert">
+          <label for="filters--invert">NEGATIVO</label>
+          <input
+            type="range"
+            id="invert"
+            min="0"
+            max="1"
+            step="0.1"
+            value="0"
+          />
+        </div>
+      </div>
+      <button class="reset--btn" id="btnResetFilters">
+        Reestablecer filtros
+      </button>
     </section>
-    <!-- </aside> -->
 
+    <!-- Comienza el section de TEXTO-->
+
+    <section class="section--txt hidden" id="txtSection">
+      <button class="close--btn" id="btnCloseSectionTxt">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2>TEXTO</h2>
+
+      <div class="text--editor">
+        <div class="text--top">
+          <h3>SUPERIOR</h3>
+          <textarea name="top--text" id="topTextArea" rows="1">
+TOP TEXT</textarea
+          >
+          <label>
+            <input type="checkbox" name="no--top-text" id="withoutTopText" />
+            Sin texto superior
+          </label>
+        </div>
+        <div class="text--bottom">
+          <h3>INFERIOR</h3>
+          <textarea name="bottom--text" id="bottomTextArea" rows="1">
+BOTTOM TEXT</textarea
+          >
+          <label>
+            <input
+              type="checkbox"
+              name="no--bottom-text"
+              id="withoutBottomText"
+            />
+            Sin texto inferior
+          </label>
+        </div>
+      </div>
+
+      <div class="family--font">
+        <h3>FUENTE</h3>
+        <div>
+          <label>
+            <select name="font--family" id="fontFamilySelect">
+              <option value="Arial, Helvetica, sans-serif">Arial</option>
+              <option value="'Arial Black', sans-serif">Arial Black</option>
+              <option value="American Typewriter Normal">
+                American Typewriter
+              </option>
+              <option value="'Andale Mono', sans-serif">Andale Mono</option>
+              <option value="Comic Sans MS">Comic Sans MS</option>
+              <option value="'Helvetica', sans-serif">Helvetica</option>
+              <option
+                value="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+                selected
+              >
+                Impact
+              </option>
+              <option value="Verdana, Geneva, Tahoma, sans-serif">
+                Verdana
+              </option>
+              <option value="'Times New Roman', Times, serif">
+                Times New Roman
+              </option>
+            </select>
+          </label>
+        </div>
+        <div class="font-size-align">
+          <label>
+            <input
+              type="number"
+              value="47"
+              min="12"
+              class="font--size"
+              id="fontSize"
+            />
+          </label>
+          <div class="txt--align">
+            <button><i class="fa-solid fa-align-left"></i></button>
+            <button><i class="fa-solid fa-align-center"></i></button>
+            <button><i class="fa-solid fa-align-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="color">
+        <div class="color--panel">
+          <div>
+            <h3>COLOR</h3>
+            <label class="label">
+              <input type="color" id="fontColor" value="#000000" />
+              <span>#000000</span>
+            </label>
+          </div>
+
+          <div>
+            <h3>FONDO</h3>
+            <label class="label">
+              <input type="color" id="fontBackgroundColor" value="#FFFFFF" />
+              <span>#FFFFFF</span>
+            </label>
+          </div>
+        </div>
+        <label>
+          <input
+            type="checkbox"
+            name="background--checkbox"
+            id="transparentBackground"
+          />
+          Fondo transparente
+        </label>
+      </div>
+
+      <div class="text--shadow">
+        <h3>CONTORNO</h3>
+        <div>
+          <button type="button" class="btn--txt-shadow" id="btnNoneShadow">
+            Ninguno
+          </button>
+          <button type="button" class="btn--txt-shadow" id="btnLightShadow">
+            Claro
+          </button>
+          <button type="button" class="btn--txt-shadow" id="btnDarkShadow">
+            Oscuro
+          </button>
+        </div>
+      </div>
+
+      <div class="spacing">
+        <h3>ESPACIADO</h3>
+        <label class="label--spacing">
+          <input
+            type="number"
+            min="10"
+            max="50"
+            value="35"
+            class="number--spacing"
+            id="inputSpacing"
+          />
+        </label>
+      </div>
+
+      <div class="line--spacing">
+        <h3>INTERLINEADO</h3>
+        <label>
+          <select name="line--height-select" id="lineHeightSelect">
+            <option value="0.8">0.8</option>
+            <option value="1">1</option>
+            <option value="1.2" selected>1.2</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+          </select>
+        </label>
+      </div>
+    </section>
     <script src="JS/main.js"></script>
   </body>
 </html>

@@ -159,11 +159,18 @@ const withOutFontBackground = (e) =>{
   if (e.target.checked) {
     $("#topText").style.backgroundColor = "transparent"
     $("#bottomText").style.backgroundColor = "transparent"
+    $("#topText").style.position = "absolute"
+    $("#bottomText").style.position = "absolute"
+    $("#topText").style.top = "5%"
+    $("#bottomText").style.top = "80%"
 } else {
-    $("#topText").style.backgroundColor = $("#fontBackgroundColor").value
-    $("#bottomText").style.backgroundColor = $("#fontBackgroundColor").value
+    $("#topText").style.backgroundColor = "white"
+    $("#bottomText").style.backgroundColor = "white"
+    $("#topText").style.position = "static"
+    $("#bottomText").style.position = "static"
 }
 }
+
 
 //ESPACIADO
 const selectedSpacing = (e) =>{
@@ -282,7 +289,7 @@ $("#fontColor").addEventListener("input", selectedFontColor)
 $("#fontBackgroundColor").addEventListener("input", selectedFontBackgroundColor)
 
 //FONDO TRANSPARENTE DEL TEXTO
-$("#transparentBackground").addEventListener("input", withOutFontBackground)
+$("#transparentBackground").addEventListener("click", (withOutFontBackground))
 
 //ESPACIADO
 $("#inputSpacing").addEventListener("input", selectedSpacing)
